@@ -1,0 +1,56 @@
+---
+title: 'Информация о мерчанте'
+api: GET /api/v1/merchant/{id}
+description: "Получение информации об определенном мерчанте"
+---
+
+## Get Merchant Detais
+Получает подробную информацию о конкретном мерчанте по его идентификатору.
+
+
+## Path Parameters
+| Parameter | Type | Required | Description |
+|----------|-------|----------|-------------|
+| ```id```  | string  | Yes  | Unique identifier of the merchant |
+
+## Response Fields
+
+| Field | Type | Description |
+|----------|-------|----------|
+| ```address```  | string | Physical or registered address of the merchant |
+| ```callback_url``` | string | URL that receives transaction notifications |
+| ```cents_allowed``` | boolean | Indicates if cents/decimal amounts are allowed in transactions |
+| ```changed_on``` | string | Timestamp of the last modification (ISO 8601 format) |
+| ```created_on``` | string | Timestamp when the merchant was created (ISO 8601 format) |
+| ```display_name``` | string | Human-readable name of the merchant |
+| ```fs_uniquifier``` | string | Unique identifier for file system operations |
+| ```name``` | string | Machine-readable merchant identifier |
+| ```registration_date``` | string | Date when the merchant was registered (YYYY-MM-DD format) |
+| ```return_urls``` | string | JSON string containing return URLs configuration |
+| ```secret_key``` | string  | Secret key used for API authentication |
+
+## Request Example
+<CodeGroup>
+```cURL cURL
+curl -X GET \
+  https://api.example.com/api/v1/merchant/12345 \
+  -H 'Authorization: Bearer YOUR_ACCESS_TOKEN'
+```
+</CodeGroup>
+
+## Response Example
+```json
+{
+    "address": "test address",
+    "callback_url": "http://188.120.228.134:8000/success",
+    "cents_allowed": true,
+    "changed_on": "2024-10-07T22:15:25",
+    "created_on": "2024-10-02T06:54:00",
+    "display_name": "Test Merchant",
+    "fs_uniquifier": "647af1efd32f4f2986d2109f52a1a55f",
+    "name": "test-merchant",
+    "registration_date": "2024-10-02",
+    "return_urls": "{}",
+    "secret_key": "test-secret"
+}
+```

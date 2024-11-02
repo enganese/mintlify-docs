@@ -1,71 +1,60 @@
 ---
-title: Introduction
-description: 'Welcome to the home of your new documentation'
+title: Мерчанты
+description: 'API документация Мерчантов'
 ---
 
 <img
   className="block dark:hidden"
-  src="/images/hero-light.svg"
+  src="/images/lenopay-white.png"
   alt="Hero Light"
 />
 <img
   className="hidden dark:block"
-  src="/images/hero-dark.svg"
+  src="/images/lenopay.png"
   alt="Hero Dark"
 />
 
-## Setting up
+## Авторизация
 
-The first step to world-class documentation is setting up your editing environments.
-
-<CardGroup cols={2}>
+<CardGroup cols={1}>
   <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
+    title="API Авторизация Мерчантов"
+    icon="people-group"
+    href="api-merchant/auth"
   >
-    Get your docs set up locally for easy development
-  </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
+  Как аутентифицироваться в Merchant API
   </Card>
 </CardGroup>
 
-## Make it yours
-
-Update your docs to your brand and add valuable content for the best user conversion.
+## Мерчанты
 
 <CardGroup cols={2}>
   <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
+    title="Информация о мерчанте"
+    icon="info"
+    href="api-reference/endpoint/get-info"
   >
-    Customize your docs to your company's colors and brands
+    Получение информации о мерчанте
   </Card>
   <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
+    title="Список транзакций"
+    icon="link-horizontal"
+    href="api-reference/endpoint/transactions"
   >
-    Automatically generate endpoints from an OpenAPI spec
+  Получение списка транзакций мерчанта
   </Card>
   <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
+    title="Добавление транзакции"
+    icon="plus"
+    href="api-reference/endpoint/add"
   >
-    Build interactive features and designs to guide your users
+    Добавление транзакции мерчанта
   </Card>
   <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
+    title="Получение баланса мерчанта"
+    icon="wallet"
+    href="api-reference/endpoint/get-balance"
   >
-    Check out our showcase of our favorite documentation
+    Получение актуальной информации о текущем балансе мерчанта
   </Card>
 </CardGroup>

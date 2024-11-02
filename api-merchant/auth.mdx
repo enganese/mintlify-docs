@@ -1,0 +1,64 @@
+---
+title: 'Вход в аккаунт'
+api: POST api/v1/security/login
+description: "Как аутентифицироваться в Merchant API с использованием Bearer токенов JWT."
+---
+## Login
+Аутентифицируйтесь, чтобы получить токен доступа, который можно использовать для последующих запросов.
+
+## Request Body
+| Parameter | Type | Required | Description |
+|----------|-------|----------|-------------|
+| ```username```  | string  | Yes  | Your username |
+| ```password``` | string  | Yes  | Your password |
+| ```provider``` | string | Yes  | Authentication provider (use "db") |
+
+<ParamField body="username" type="string">
+    Создайте имя пользователя мерчанта
+</ParamField>
+
+<ParamField body="password" type="string">
+    Создайте пароль мерчанта
+</ParamField>
+
+<ParamField body="provider" type="string">
+    Выберите провайдер аутентификатора (db по умолчанию)
+</ParamField>
+
+## Request
+<CodeGroup>
+```cURL cURL
+curl -X POST https://api.example.com/api/v1/security/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "admin",
+    "password": "testPassword",
+    "provider": "db"
+  }'
+```
+</CodeGroup>
+
+## Response
+
+<CodeGroup>
+```json Response
+{
+    "access_token": "ey..."
+}
+```
+| Parameter | Type | Required | Description |
+|----------|-------|-------------|
+| ```access_token``` | string | Yes | JWT token to be used for authentication |
+
+</CodeGroup>
+
+В ответ генерируется ```JWT Bearer``` токен, который нужно передавать в определенных запросах во все эндпойнты API, где требуется авторизация.
+
+
+## Example Error Response
+``` json
+{
+    "error": "Invalid credentials",
+    "status_code": 401
+}
+```
